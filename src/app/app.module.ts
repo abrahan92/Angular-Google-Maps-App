@@ -1,16 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
 
+import { AgmCoreModule } from '@agm/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
+// Reactive Forms Module
 
 @NgModule({
+  entryComponents: [
+    MapaEditarComponent
+  ],
   declarations: [
-    AppComponent
+    AppComponent,
+    MapaComponent,
+    MapaEditarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB2jrKC8Sg2_lxt_JV4PP5Fj1SkeEcRmUY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
